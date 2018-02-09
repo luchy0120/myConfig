@@ -1,0 +1,226 @@
+git clone url
+git remote add remote url
+
+git fetch remote
+git branch -u remote/master master
+git pull remote
+
+git diff file
+git add file
+git commit -m ""
+git push origin master
+
+git stash
+git stash apply
+
+
+
+find / -name "*haha*" 
+VirtualBox &
+
+
+
+
+http://www.allprogrammingtutorials.com/tutorials/setting-up-hadoop-2-6-0-cluster.php
+
+
+docker tag 23f0baa06332 arda/spark-master:1.6.1-u14.04-0.11-SNAPSHOT
+
+docker tag e411e305c8a7 arda/hadoop-base:2.6.4-u14.04-0.11-SNAPSHOT 
+
+make ARTIFACT="jenkins"  ARTIFACT_VERSION="0.1"  PARENT_VERSION="7-c6" VERSION="0.11" build
+
+make ARTIFACT="spark-worker-mkl" ARTIFACT_VERSION="1.6.1-u14.04" build
+
+make ARTIFACT="caffe-spark-client" ARTIFACT_VERSION="1.6.1-u14.04" build
+
+make ARTIFACT="hdfs-yarn-client-mkl" ARTIFACT_VERSION="2.6.4-u14.04" build
+make ARTIFACT="hdfs-yarn-namenode-resourcemanager-mkl" ARTIFACT_VERSION="2.6.4-u14.04" build
+make ARTIFACT="hdfs-yarn-datanode-nodemanager-mkl" ARTIFACT_VERSION="2.6.4-u14.04" build
+
+
+make ARTIFACT="hdfs-yarn-client-mkl" ARTIFACT_VERSION="2.6.4-u14.04" publish
+make ARTIFACT="hdfs-yarn-namenode-resourcemanager-mkl" ARTIFACT_VERSION="2.6.4-u14.04" publish
+make ARTIFACT="hdfs-yarn-datanode-nodemanager-mkl" ARTIFACT_VERSION="2.6.4-u14.04" publish
+
+make ARTIFACT="caffe-spark-client" ARTIFACT_VERSION="0.1-u14.04" build
+
+make ARTIFACT="caffe-spark-worker-mkl" ARTIFACT_VERSION="0.1-u14.04" build
+
+make ARTIFACT="intel-caffe-nodemanager" ARTIFACT_VERSION="0.1-u14.04" build
+make ARTIFACT="intel-caffe-resourcemanager" ARTIFACT_VERSION="0.1-u14.04" build
+
+
+caffe-spark-client:0.1-u14.04-0.11-SNAPSHOT
+
+
+make ARTIFACT="intel-caffe-client" ARTIFACT_VERSION="0.1-u14.04" build
+make ARTIFACT="intel-caffe-nodemanager" ARTIFACT_VERSION="0.1-u14.04" build
+make ARTIFACT="intel-caffe-resourcemanager" ARTIFACT_VERSION="0.1-u14.04" build
+
+make ARTIFACT="arda-base" ARTIFACT_VERSION="c6" build
+
+        intel-caffe-client:0.1-u14.04:./images/frameworks/hadoop/2.6.4-u14.04/intel-caffe/client \
+        intel-caffe-nodemanager:0.1-u14.04:./images/frameworks/hadoop/2.6.4-u14.04/intel-caffe/nodemanager \
+        intel-caffe-resourcemanager:0.1-u14.04:./images/frameworks/hadoop/2.6.4-u14.04/intel-caffe/resourcemanager
+
+
+make ARTIFACT="hadoop-hyper" ARTIFACT_VERSION="c6" build
+
+:2.6.4:8-u14.04
+
+
+:2.6.4-u14.04
+
+
+make ARTIFACT="pat-slave" ARTIFACT_VERSION="0.1-u14.04" publish
+
+
+sbtopts:./share/sbt-launcher-packaging/conf/
+
+
+tar -xzvf spark-1.6.1-bin-hadoop2.6.tgz && \
+tar -xzvf intel_2017_mkl.tar.gz && \
+   tar -xzvf mklml_lnx_2017.0.0.20160801.tar.gz && \
+     tar -xzvf caffe_on_spark_intel.tar.gz && \
+    source /opt/intel/mkl/bin/mklvars.sh intel64
+
+
+
+ctrl+a ,ctrl+e ,ctrl+u ,ctrl+k 
+
+ctrl + left .ctrl + right
+
+ctrl+w ,alt+d ,ctrl +y
+
+ctrl +?  (good)
+
+ctrl+d
+
+ctrl+t , alt + t
+
+alt+. 
+
+!*
+
+^oldstr^newstr
+
+esc + num + action
+
+
+ssh -qTfnN -D 7070 arda@10.239.47.211
+ssh -o ProxyCommand='nc -x 127.0.0.1:7070 %h %p' arda@gondolin-node-011
+
+ssh -L 7071:gondolin-node-011:22 arda@10.239.47.211  
+
+ssh -o ProxyCommand='ssh arda@10.239.47.211 nc gondolin-node-011 22' arda@gondolin-node-011
+
+
+update-alternatives --config nc
+
+
+/opt/hadoop-2.6.4/bin/hadoop namenode -format
+./hadoop-daemon.sh start namenode
+
+/opt/hadoop-2.6.4/bin/hadoop distcp  hdfs://Gondolin-Node-016:9000/caffe/googlenet8/image_net_googlenet_256.model hdfs://gondolin-node-011:9000/caffe/googlenet8/image_net_googlenet_256.model
+
+
+
+
+
+arda iter 5000 288
+arda iter 120  263
+
+native iter 5000 291
+native iter 120 255
+
+zsh   :     unfunction myfunction
+
+你可以使用如下命令替换掉本地改动：
+git checkout -- <filename>
+
+
+丢弃你所有的本地改动与提交，可以到服务器上获取最新的版本并将你本地主分支指向到它：
+git fetch origin
+git reset --hard origin/master
+
+
+openssh-server.x86_64                6.6.1p1-25.el7_2
+openssh-server         x86_64        5.3p1-118.1.el6_8
+openssh-server-5.3p1-118.1.el6_8.x86_64
+
+
+nvidia-smi  driver--version 352.39
+
+
+
+安装时dpkg deb包安装nvidia-docker 
+# Install nvidia-docker and nvidia-docker-plugin
+wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.0-rc.3/nvidia-docker_1.0.0.rc.3-1_amd64.deb
+sudo dpkg -i /tmp/nvidia-docker*.deb && rm /tmp/nvidia-docker*.deb
+
+
+
+# Test nvidia-smi
+nvidia-docker run --rm nvidia/cuda nvidia-smi
+
+
+查看label 里面的 volumesNeeded "com.nvidia.volumes.needed": "nvidia_driver"
+查看/dev/nvidia-uvm 是否存在
+查看是否安装 nvidia-modprobe -u -c=0
+设置环境变量“CUDA_DISABLE_UNIFIED_MEMORY", "1"
+"CUDA_CACHE_DISABLE", "1"
+移除环境变量“CUDA_VISIBLE_DEVICES”
+加载libnvidia-ml.so.1 ， /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.1， 并调用nvml.h  nvmlInit 方法初始化 NVIDIA Management Library
+检查/dev/nvidiactl与/dev/nvidia-uvm-tools ，将他们添加到--device中
+查看docker volume inspect nvidia_driver_352.39 的信息，包括mount 信息等
+
+
+
+
+
+
+
+curl -s localhost:3476/docker/cli
+得到
+--device=/dev/nvidiactl --device=/dev/nvidia-uvm --device=/dev/nvidia0 --volume-driver=nvidia-docker --volume=nvidia_driver_352.68:/usr/local/nvidia:ro
+
+
+
+
+_ docker run -e JNLP_PROTOCOL_OPTS=-Dorg.jenkinsci.remoting.engine.JnlpProtocol3.disabled=false jenkinsci/jnlp-slave -url http://10.239.158.28:8080 622ea36254881e4b576e8aaa63fed0580bb5e5f2e359d0addf8d62caa24b8e6c test
+
+root : /home/jenkins
+plugin : NodeLabel Parameter Plugin , Swarm plugin , copy artifact plugin, copy to slave plugin (copy slave's file to master ) 
+
+
+dynamic create node:
+http://stackoverflow.com/questions/22982646/jenkins-configure-slave-node-address-dynamically-using-command-or-groovy-script
+
+secret:
+for (aSlave in hudson.model.Hudson.instance.slaves)
+{ println aSlave.name + "," + aSlave.getComputer().getJnlpMac() }
+
+
+java -Dorg.jenkinsci.remoting.engine.Jnlpotocol3.disabled=false -cp ./slave.jar hudson.remoting.jnlp.Main -headless -url http://10.239.158.28:8080 6d05b6104912c0a9cf87686d131cb9c50c64e8184aee6d72d2313372958d04dd test
+
+
+https://www.cloudbees.com/jenkins/juc-2015/presentations/JUC-2015-USEast-Groovy-With-Jenkins-McCollum.pdf 
+
+
+
+http://qiankunli.github.io/2014/09/10/monitor.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
